@@ -176,6 +176,11 @@ set belloff=all
 # set terminal title
 set title
 
+# set terminal colours
+if has("termguicolors")
+    set termguicolors
+endif
+
 
 ######################################################################
 # Mouse
