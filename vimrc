@@ -46,6 +46,7 @@ vim9script
 # v7.0 - 2024/12/26 - Switched to Vim9 Script
 #                   - Added Quick Scope
 # v7.1 - 2025/02/12 - Added Ollama support
+# v7.3 - 2026/10/04 - Fix persistent undo
 #
 ######################################################################
 
@@ -465,9 +466,6 @@ map <C-p> :Files ~/<CR>
 # TagBar
 map <C-t> :TagbarToggle<CR>
 
-# UndoTree
-map <C-u> :UndotreeToggle<CR>
-
 # no highlighting
 noremap <Leader>/ :noh<CR>
 
@@ -556,7 +554,7 @@ endif
 
 # undo
 #
-var udir = expand('~/.vim/runtime.undo')
+var udir = expand('~/.vim/runtime/undo')
 if !isdirectory(udir)
     mkdir(udir, 'p')
 endif
